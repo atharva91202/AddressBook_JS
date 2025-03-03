@@ -36,6 +36,11 @@ class AddressBook {
             console.log("Contact not found.");
         }
     }
+  countContacts() {
+          let count = this.contacts.reduce((acc, _) => acc + 1, 0);
+          console.log(`Total contacts in Address Book: ${count}`);
+          return count;
+      }
 
     displayContacts() {
         if (this.contacts.length === 0) {
