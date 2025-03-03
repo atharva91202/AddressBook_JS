@@ -49,7 +49,16 @@ class AddressBook {
           console.log(`Total contacts in Address Book: ${count}`);
           return count;
       }
+   searchByCityOrState(location) {
+          let foundContacts = this.contacts.filter(c => c.city === location || c.state === location);
 
+          if (foundContacts.length === 0) {
+              console.log(`No contacts found in ${location}.`);
+          } else {
+              console.log(`Contacts in ${location}:`);
+              foundContacts.forEach(contact => console.log(contact.toString()));
+          }
+      }
     displayContacts() {
         if (this.contacts.length === 0) {
             console.log("Address Book is empty.");
